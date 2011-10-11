@@ -6,8 +6,8 @@ parser_src = []
   src = "ext/http/picard/http/#{parser}.java"
   parser_src << src
 
-  file src => "parser/HttpParser.rl" do |t|
-    sh "ragel #{t.prerequisites.last} -J -G2 -o #{t.name}"
+  file src => "parser/#{parser}.rl" do |task|
+    sh "ragel #{task.prerequisites.first} -J -G2 -o #{src}"
   end
 end
 

@@ -15,6 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Http::VERSION
 
+  gem.add_development_dependency 'rake-compiler'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec', '>= 2.6.0'
   gem.add_development_dependency 'json'

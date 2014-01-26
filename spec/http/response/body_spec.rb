@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HTTP::ResponseBody do
+describe HTTP::Response::Body do
   let(:body)     { 'Hello, world!' }
   let(:response) { double(:response) }
 

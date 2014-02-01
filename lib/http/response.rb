@@ -144,6 +144,14 @@ module HTTP
       "#<#{self.class}/#{@version} #{status} #{reason} @headers=#{@headers.inspect}>"
     end
 
+    def parse
+      if @body.empty?
+        @body
+      else
+        JSON.parse(@body, :symbolize_names => true)
+      end
+    end
+
     class BodyDelegator < ::Delegator
       attr_reader :response
 
